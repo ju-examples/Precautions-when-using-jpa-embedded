@@ -1,13 +1,13 @@
-package me.jeonguk.precautionswhenusingjpaembedded;
+package me.jeonguk.examples;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PrecautionsWhenUsingJpaEmbeddedApplication {
+public class ExampleApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PrecautionsWhenUsingJpaEmbeddedApplication.class, args);
+        SpringApplication.run(ExampleApplication.class, args);
     }
 
 }

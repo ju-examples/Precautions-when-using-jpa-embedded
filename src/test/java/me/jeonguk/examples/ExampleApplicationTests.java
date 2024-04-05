@@ -1,10 +1,10 @@
-package me.jeonguk.precautionswhenusingjpaembedded;
+package me.jeonguk.examples;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PrecautionsWhenUsingJpaEmbeddedApplicationTests {
+class ExampleApplicationTests {
 
     @Test
     void contextLoads() {
