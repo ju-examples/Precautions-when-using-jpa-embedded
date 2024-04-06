@@ -1,4 +1,4 @@
-package me.jeonguk.examples.entity;
+package me.jeonguk.examples.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -8,7 +8,7 @@ import lombok.experimental.FieldDefaults;
 @Entity(name = "users")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class User {
+public class UserEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -18,7 +18,7 @@ public class User {
     @Embedded
     Email userEmail;
 
-    public User(String name) {
+    public UserEntity(String name) {
         this.name = name;
         this.userEmail = new Email();
     }

@@ -1,4 +1,4 @@
-package me.jeonguk.examples.entity;
+package me.jeonguk.examples.domain;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
