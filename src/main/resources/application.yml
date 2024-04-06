@@ -1,0 +1,27 @@
+server:
+  error:
+    include-message: always
+
+spring:
+  h2.console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:local
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    defer-datasource-initialization: true
+  jackson:
+    deserialization:
+      adjust-dates-to-context-time-zone: false
+
+logging:
+  level:
+    root: info

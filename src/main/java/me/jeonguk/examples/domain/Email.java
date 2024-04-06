@@ -20,4 +20,12 @@ public class Email {
         return new Email(emailParts[0], emailParts[1]);
     }
 
+    public boolean isEmpty() {
+        return this.emailId.isBlank() || this.emailDomain.isBlank();
+    }
+
+    public String getFullEmail() {
+        return this.emailId + "@" + this.emailDomain;
+    }
+
 }

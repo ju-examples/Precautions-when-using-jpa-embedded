@@ -2,6 +2,7 @@ package me.jeonguk.examples.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
@@ -11,8 +12,10 @@ import lombok.experimental.FieldDefaults;
 public class UserEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
     Long id;
 
+    @Getter
     String name;
 
     @Embedded
@@ -21,6 +24,10 @@ public class UserEntity {
     public UserEntity(String name) {
         this.name = name;
         this.userEmail = new Email();
+    }
+
+    public String getFullEmail() {
+        return this.userEmail.isEmpty() ? "" : this.userEmail.getFullEmail();
     }
 
     public void updateEmail(Email email) {
