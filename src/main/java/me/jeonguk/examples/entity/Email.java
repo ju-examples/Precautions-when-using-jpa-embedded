@@ -2,17 +2,17 @@ package me.jeonguk.examples.entity;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Embeddable
 @NoArgsConstructor(access = lombok.AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Profile {
+@Getter
+public class Email {
 
-    String name;
+    String emailId;
 
-    String email;
-
-    String phone;
+    String emailDomain;
 
 }

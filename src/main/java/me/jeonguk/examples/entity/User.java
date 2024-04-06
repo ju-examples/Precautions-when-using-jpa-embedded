@@ -1,9 +1,6 @@
 package me.jeonguk.examples.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -15,5 +12,19 @@ public class User {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
+    String name;
+
+    @Embedded
+    Email userEmail;
+
+    public User(String name) {
+        this.name = name;
+        this.userEmail = new Email();
+    }
+
+    public void updateEmail(Email email) {
+        this.userEmail = email;
+    }
 
 }
