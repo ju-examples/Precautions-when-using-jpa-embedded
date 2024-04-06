@@ -2,9 +2,7 @@ package me.jeonguk.examples.controller;
 
 import me.jeonguk.examples.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -20,6 +18,15 @@ public class UserController {
             @RequestBody UserCreateRequest request
     ) {
         userService.createUser(request);
+    }
+
+    @PutMapping("/users/{userId}")
+    public void updateUserEmail(
+            @PathVariable Long userId,
+            @RequestBody UserUpdateRequest request
+
+    ) {
+        userService.updateUserEmail(userId, request);
     }
 
 }

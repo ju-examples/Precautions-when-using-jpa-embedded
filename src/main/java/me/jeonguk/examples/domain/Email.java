@@ -15,4 +15,9 @@ public class Email {
 
     String emailDomain;
 
+    public static Email of(String fullEmail) {
+        String[] emailParts = fullEmail.split("@");
+        return new Email(emailParts[0], emailParts[1]);
+    }
+
 }
