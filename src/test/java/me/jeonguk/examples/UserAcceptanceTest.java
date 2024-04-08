@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.http.MediaType;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class UserAcceptanceTest {
@@ -25,7 +26,7 @@ class UserAcceptanceTest {
     }
 
     private void 사용자_생성됨(String name) {
-        ExtractableResponse<Response> response = RestAssured.given().contentType("application/json").log().all()
+        ExtractableResponse<Response> response = RestAssured.given().contentType(MediaType.APPLICATION_JSON_VALUE).log().all()
                 .when()
                 .body("""
                         {
@@ -45,8 +46,7 @@ class UserAcceptanceTest {
         사용자_생성됨("jeonguk");
 
         // when
-        ExtractableResponse<Response> response = RestAssured.given()
-                .contentType("application/json").log().all()
+        ExtractableResponse<Response> response = RestAssured.given().contentType(MediaType.APPLICATION_JSON_VALUE).log().all()
                 .when()
                 .get("/users/1")
                 .then().log().all().extract();
